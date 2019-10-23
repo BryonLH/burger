@@ -2,11 +2,11 @@
     <div class="col-md-6">
         <ul class="burger-list">
             {{#each burgers}}
-            {{#unless this.devoured}}
-            <li class="burger">{{this.id}}. {{this.burger_name}}
+            {{#unless devoured}}
+            <li class="burger">{{id}}. {{burger_name}}
                 <form method="POST" action="/burgers/update" class="btn btn-primary">
                     <input class="devour-button float-right btn btn-primary" type="button" value="Devour"
-                        burgerId="{{this.id}}">
+                        burgerId="{{id}}">
                 </form>
             </li>
             {{/unless}}
@@ -16,12 +16,22 @@
     <div class="col-md-6">
         <ul class="burger-list">
             {{#each burgers}}
-            {{#if this.devoured}}
+            {{#if devoured}}
             <li class="burger devoured">
-                {{this.id}} {{this.burger_name}}
+                {{id}} {{burger_name}}
             </li>
             {{/if}}
             {{/each}}
         </ul>
+    </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action = "/api/addburger" method = "POST">
+                    <input type = "text" class = "form-control" name = "burger_name" id = "enter-text">
+                    <button type = "submit" class = "btn btn-primary" id = "burger-submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
