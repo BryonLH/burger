@@ -2,10 +2,10 @@
     <div class="col-md-6">
         <ul class="burger-list">
             {{#each burgers}}
-            {{#unless this.devoured}}
-            <li class="burger">{{this.id}}. {{this.burger_name}}
+            {{#unless devoured}}
+            <li class="burger">{{id}}. {{burger_name}}
                 <button class="devour-button float-right btn btn-primary" id="devour-button"
-                    data-id="{{id}}" data-newdevour="{{devour}}">Devour</button>
+                    data-id="{{id}}" data-newdevour="{{devoured}}">Devour</button>
             </li>
             {{/unless}}
             {{/each}}
@@ -14,9 +14,9 @@
     <div class="col-md-6">
         <ul class="burger-list">
             {{#each burgers}}
-            {{#if this.devoured}}
+            {{#if devoured}}
             <li class="burger devoured">
-                {{this.id}} {{this.burger_name}}
+                {{id}} {{burger_name}}
             </li>
             {{/if}}
             {{/each}}
